@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-ink-100 font-sans antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34, 211, 238, 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(245, 185, 66, 0.05), transparent);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-accent/30 text-white;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-300 via-accent-400 to-gold-400 bg-clip-text text-transparent;
+  }
+  .glass {
+    @apply bg-ink-850/60 backdrop-blur-xl border border-white/5;
+  }
+  .glass-strong {
+    @apply bg-ink-800/80 backdrop-blur-xl border border-white/10;
+  }
+  .glow-accent {
+    box-shadow: 0 0 40px -10px rgba(34, 211, 238, 0.4);
+  }
+  .glow-gold {
+    box-shadow: 0 0 40px -10px rgba(245, 185, 66, 0.4);
+  }
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-ink-950;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-ink-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-ink-600;
+}
