@@ -2,6 +2,7 @@ import { Lightbulb, Volume2, Music, Settings, Truck, ShieldCheck } from 'lucide-
 
 const services = [
   {
+    num: '01',
     icon: Lightbulb,
     title: 'Lichttechnik',
     description:
@@ -9,6 +10,7 @@ const services = [
     tags: ['Moving Heads', 'LED-Pars', 'Traversen', 'DMX-Steuerung'],
   },
   {
+    num: '02',
     icon: Volume2,
     title: 'Tontechnik',
     description:
@@ -16,6 +18,7 @@ const services = [
     tags: ['L-Acoustics', 'Digitalmixer', 'Mikrofone', 'Bühnenmonitore'],
   },
   {
+    num: '03',
     icon: Music,
     title: 'DJ Service',
     description:
@@ -23,6 +26,7 @@ const services = [
     tags: ['Top 100', '80er/90er', 'Black/Schlager', 'Open Format'],
   },
   {
+    num: '04',
     icon: Settings,
     title: 'Eventplanung',
     description:
@@ -30,6 +34,7 @@ const services = [
     tags: ['Beratung', 'Ablaufplan', 'Vorabstimmung', 'Besichtigung'],
   },
   {
+    num: '05',
     icon: Truck,
     title: 'Logistik & Aufbau',
     description:
@@ -37,6 +42,7 @@ const services = [
     tags: ['Anlieferung', 'Aufbau', 'Abbau', '24h-Service'],
   },
   {
+    num: '06',
     icon: ShieldCheck,
     title: 'Zuverlässigkeit',
     description:
@@ -47,46 +53,46 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="leistungen" className="relative py-28">
+    <section id="leistungen" className="relative py-28 border-t border-white/[0.06]">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl mb-16">
-          <span className="text-sm font-semibold uppercase tracking-widest text-accent-400">
-            Veranstaltungstechnik
-          </span>
+          <span className="section-label">Veranstaltungstechnik</span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold leading-tight">
             Technik, die Ihr Event
             <br />
             <span className="text-gradient">zum Erlebnis macht.</span>
           </h2>
-          <p className="mt-5 text-ink-300 text-lg leading-relaxed">
+          <p className="mt-5 text-white/50 text-lg leading-relaxed">
             Von der ersten Skizze bis zum letzten Akkord: Licht, Ton, DJ und Logistik
             aus einer Hand – perfekt aufeinander abgestimmt.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-px bg-white/[0.06] sm:grid-cols-2 lg:grid-cols-3 border border-white/[0.06]">
           {services.map((service) => (
             <div
               key={service.title}
-              className="group relative glass rounded-2xl p-8 hover:border-accent-400/30 transition-all duration-300 hover:-translate-y-1"
+              className="group relative bg-[#040404] p-8 hover:bg-white/[0.03] transition-colors duration-300"
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent-500/0 to-accent-500/0 group-hover:from-accent-500/5 group-hover:to-transparent transition-all duration-500" />
-              <div className="relative">
-                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-ink-700 group-hover:bg-accent-400 transition-colors duration-300">
-                  <service.icon className="h-7 w-7 text-accent-400 group-hover:text-ink-950 transition-colors duration-300" />
+              <div className="flex items-start justify-between mb-6">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-sm bg-white/[0.05] group-hover:bg-accent transition-colors duration-300">
+                  <service.icon className="h-6 w-6 text-white/70 group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="font-display text-xl font-semibold mb-3">{service.title}</h3>
-                <p className="text-ink-300 leading-relaxed text-sm">{service.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {service.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-ink-700/60 px-3 py-1 text-xs text-ink-200 group-hover:bg-accent-400/10 group-hover:text-accent-300 transition-colors"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <span className="font-display text-sm font-bold text-white/20 tracking-widest">
+                  {service.num}
+                </span>
+              </div>
+              <h3 className="font-display text-xl font-semibold mb-3">{service.title}</h3>
+              <p className="text-white/50 leading-relaxed text-sm">{service.description}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {service.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-sm bg-white/[0.04] px-2.5 py-1 text-[11px] text-white/50 group-hover:text-white/70 transition-colors"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           ))}

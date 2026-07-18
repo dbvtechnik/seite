@@ -96,19 +96,15 @@ export default function Contact({ selectedPackage, onSelectPackage }: Props) {
   };
 
   return (
-    <section id="kontakt" className="relative py-28">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-accent-500/10 blur-[120px]" />
-
+    <section id="kontakt" className="relative py-28 border-t border-white/[0.06]">
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-sm font-semibold uppercase tracking-widest text-accent-400">
-            Kontakt
-          </span>
+          <span className="section-label">Kontakt</span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl font-bold leading-tight">
             Anfrage
             <span className="text-gradient"> senden</span>
           </h2>
-          <p className="mt-5 text-ink-300 text-lg">
+          <p className="mt-5 text-white/50 text-lg">
             Erzählen Sie uns von Ihrem Event. Wir melden uns innerhalb von 24 Stunden.
           </p>
         </div>
@@ -116,42 +112,42 @@ export default function Contact({ selectedPackage, onSelectPackage }: Props) {
         <div className="grid gap-8 lg:grid-cols-5">
           {/* Contact info */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="glass rounded-2xl p-8">
+            <div className="card p-8">
               <h3 className="font-display text-xl font-semibold mb-6">Direkter Kontakt</h3>
               <div className="space-y-5">
                 <a href="tel:+491701234567" className="flex items-center gap-4 group">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-ink-700 group-hover:bg-accent-400 transition-colors">
-                    <Phone className="h-5 w-5 text-accent-400 group-hover:text-ink-950 transition-colors" />
+                  <div className="flex h-11 w-11 items-center justify-center bg-white/[0.05] group-hover:bg-accent transition-colors">
+                    <Phone className="h-5 w-5 text-white/70 group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <p className="text-xs text-ink-400">Telefon</p>
+                    <p className="text-xs text-white/40">Telefon</p>
                     <p className="text-sm font-medium text-white">+49 170 1234567</p>
                   </div>
                 </a>
                 <a href="mailto:info@dbv-veranstaltungstechnik.de" className="flex items-center gap-4 group">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-ink-700 group-hover:bg-accent-400 transition-colors">
-                    <Mail className="h-5 w-5 text-accent-400 group-hover:text-ink-950 transition-colors" />
+                  <div className="flex h-11 w-11 items-center justify-center bg-white/[0.05] group-hover:bg-accent transition-colors">
+                    <Mail className="h-5 w-5 text-white/70 group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <p className="text-xs text-ink-400">E-Mail</p>
+                    <p className="text-xs text-white/40">E-Mail</p>
                     <p className="text-sm font-medium text-white">info@dbv-veranstaltungstechnik.de</p>
                   </div>
                 </a>
                 <div className="flex items-center gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-ink-700">
-                    <MapPin className="h-5 w-5 text-accent-400" />
+                  <div className="flex h-11 w-11 items-center justify-center bg-white/[0.05]">
+                    <MapPin className="h-5 w-5 text-white/70" />
                   </div>
                   <div>
-                    <p className="text-xs text-ink-400">Einsatzgebiet</p>
+                    <p className="text-xs text-white/40">Einsatzgebiet</p>
                     <p className="text-sm font-medium text-white">Filderstadt & Stuttgart</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="glass rounded-2xl p-8">
+            <div className="card p-8">
               <h3 className="font-display text-lg font-semibold mb-3">Antwortzeiten</h3>
-              <p className="text-sm text-ink-300 leading-relaxed">
+              <p className="text-sm text-white/50 leading-relaxed">
                 Anfragen werden in der Regel innerhalb von 24 Stunden beantwortet.
                 Für kurzfristige Anfragen erreichen Sie uns am schnellsten telefonisch.
               </p>
@@ -160,20 +156,20 @@ export default function Contact({ selectedPackage, onSelectPackage }: Props) {
 
           {/* Form */}
           <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="glass-strong rounded-2xl p-8 space-y-5">
+            <form onSubmit={handleSubmit} className="glass-strong p-8 space-y-5">
               {/* Selected package display */}
               <div>
-                <label className="mb-2 flex items-center gap-2 text-sm font-medium text-ink-200">
-                  <Package className="h-4 w-4 text-accent-400" />
+                <label className="mb-2 flex items-center gap-2 text-sm font-medium text-white/70">
+                  <Package className="h-4 w-4 text-accent" />
                   Gewähltes Paket
                 </label>
                 {selectedPkg ? (
-                  <div className="flex items-center justify-between rounded-xl bg-ink-700/50 border border-accent-400/30 px-4 py-3">
+                  <div className="flex items-center justify-between bg-white/[0.05] border border-accent/30 px-4 py-3">
                     <span className="text-sm font-semibold text-white">{selectedPkg.name}</span>
                     <button
                       type="button"
                       onClick={() => onSelectPackage(selectedPkg.id)}
-                      className="text-xs text-accent-400 hover:text-accent-300 font-medium"
+                      className="text-xs text-accent hover:text-accent-300 font-medium"
                     >
                       Wechseln
                     </button>
@@ -181,7 +177,7 @@ export default function Contact({ selectedPackage, onSelectPackage }: Props) {
                 ) : (
                   <a
                     href="#pakete"
-                    className="block rounded-xl border border-dashed border-ink-500 px-4 py-3 text-sm text-ink-400 hover:border-accent-400 hover:text-accent-400 transition-colors text-center"
+                    className="block border border-dashed border-white/15 px-4 py-3 text-sm text-white/40 hover:border-accent hover:text-accent transition-colors text-center"
                   >
                     Bitte wählen Sie ein Paket aus
                   </a>
@@ -190,47 +186,47 @@ export default function Contact({ selectedPackage, onSelectPackage }: Props) {
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-ink-200">Name *</label>
+                  <label className="mb-2 block text-sm font-medium text-white/70">Name *</label>
                   <input
                     type="text"
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full rounded-xl bg-ink-900/60 border border-ink-600 px-4 py-3 text-sm text-white placeholder-ink-400 focus:border-accent-400 focus:outline-none focus:ring-1 focus:ring-accent-400 transition-colors"
+                    className="w-full bg-white/[0.03] border border-white/10 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
                     placeholder="Max Mustermann"
                   />
                 </div>
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-ink-200">E-Mail *</label>
+                  <label className="mb-2 block text-sm font-medium text-white/70">E-Mail *</label>
                   <input
                     type="email"
                     required
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full rounded-xl bg-ink-900/60 border border-ink-600 px-4 py-3 text-sm text-white placeholder-ink-400 focus:border-accent-400 focus:outline-none focus:ring-1 focus:ring-accent-400 transition-colors"
+                    className="w-full bg-white/[0.03] border border-white/10 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
                     placeholder="max@example.de"
                   />
                 </div>
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-ink-200">Telefon</label>
+                  <label className="mb-2 block text-sm font-medium text-white/70">Telefon</label>
                   <input
                     type="tel"
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    className="w-full rounded-xl bg-ink-900/60 border border-ink-600 px-4 py-3 text-sm text-white placeholder-ink-400 focus:border-accent-400 focus:outline-none focus:ring-1 focus:ring-accent-400 transition-colors"
+                    className="w-full bg-white/[0.03] border border-white/10 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
                     placeholder="+49 170 1234567"
                   />
                 </div>
                 <div>
-                  <label className="mb-2 flex items-center gap-2 text-sm font-medium text-ink-200">
-                    <Calendar className="h-4 w-4 text-accent-400" />
+                  <label className="mb-2 flex items-center gap-2 text-sm font-medium text-white/70">
+                    <Calendar className="h-4 w-4 text-accent" />
                     Eventdatum
                   </label>
                   <input
                     type="date"
                     value={form.event_date}
                     onChange={(e) => setForm({ ...form, event_date: e.target.value })}
-                    className="w-full rounded-xl bg-ink-900/60 border border-ink-600 px-4 py-3 text-sm text-white placeholder-ink-400 focus:border-accent-400 focus:outline-none focus:ring-1 focus:ring-accent-400 transition-colors [color-scheme:dark]"
+                    className="w-full bg-white/[0.03] border border-white/10 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors [color-scheme:dark]"
                   />
                 </div>
               </div>
@@ -252,20 +248,20 @@ export default function Contact({ selectedPackage, onSelectPackage }: Props) {
                   rows={4}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full resize-none rounded-xl bg-ink-900/60 border border-ink-600 px-4 py-3 text-sm text-white placeholder-ink-400 focus:border-accent-400 focus:outline-none focus:ring-1 focus:ring-accent-400 transition-colors"
+                  className="w-full resize-none bg-white/[0.03] border border-white/10 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
                   placeholder="Erzählen Sie uns von Ihrem Event – Anlass, Gästeanzahl, Wünsche..."
                 />
               </div>
 
               {status === 'error' && (
-                <div className="flex items-center gap-3 rounded-xl bg-red-500/10 border border-red-500/30 px-4 py-3 text-sm text-red-300">
+                <div className="flex items-center gap-3 bg-red-500/10 border border-red-500/30 px-4 py-3 text-sm text-red-300">
                   <AlertCircle className="h-5 w-5 flex-shrink-0" />
                   <span>{errorMsg}</span>
                 </div>
               )}
 
               {status === 'success' && (
-                <div className="flex items-center gap-3 rounded-xl bg-green-500/10 border border-green-500/30 px-4 py-3 text-sm text-green-300">
+                <div className="flex items-center gap-3 bg-green-500/10 border border-green-500/30 px-4 py-3 text-sm text-green-300">
                   <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
                   <span>Anfrage erfolgreich gesendet! Wir melden uns in Kürze.</span>
                 </div>
@@ -274,7 +270,7 @@ export default function Contact({ selectedPackage, onSelectPackage }: Props) {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="group flex w-full items-center justify-center gap-2 rounded-full bg-accent-400 px-6 py-3.5 text-base font-semibold text-ink-950 hover:bg-accent-300 transition-all glow-accent disabled:opacity-60 disabled:cursor-not-allowed"
+                className="group flex w-full items-center justify-center gap-2 bg-accent px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-white hover:bg-accent-600 transition-all glow-accent disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {status === 'loading' ? (
                   <>
