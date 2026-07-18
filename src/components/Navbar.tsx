@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, Volume2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Leistungen', href: '#leistungen' },
@@ -27,15 +27,12 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <a href="#top" className="flex items-center gap-2.5 group">
-          <div className="relative">
-            <div className="absolute inset-0 bg-accent-400 blur-lg opacity-50 group-hover:opacity-80 transition-opacity" />
-            <Volume2 className="relative h-7 w-7 text-accent-400" strokeWidth={2.5} />
-          </div>
-          <span className="font-display text-xl font-bold tracking-tight">
-            DBV
-            <span className="text-accent-400">.</span>
-          </span>
+        <a href="#top" className="flex items-center gap-3 group">
+          <img
+            src="/image.png"
+            alt="DBV Veranstaltungstechnik Logo"
+            className="h-11 w-auto transition-transform duration-300 group-hover:scale-105"
+          />
         </a>
 
         <div className="hidden items-center gap-8 md:flex">

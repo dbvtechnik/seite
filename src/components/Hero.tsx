@@ -8,7 +8,7 @@ export default function Hero() {
 
       {/* Glowing orbs */}
       <div className="absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-accent-500/20 blur-[120px] animate-pulse-slow" />
-      <div className="absolute bottom-1/4 -right-20 h-96 w-96 rounded-full bg-gold/10 blur-[120px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
+      <div className="absolute bottom-1/4 -right-20 h-96 w-96 rounded-full bg-accent-500/10 blur-[120px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
 
       <div className="relative mx-auto max-w-7xl px-6 py-20 w-full">
         <div className="max-w-4xl">
@@ -52,7 +52,7 @@ export default function Hero() {
             <div className="flex items-center gap-2">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                  <Star key={i} className="h-4 w-4 fill-accent-500 text-accent-500" />
                 ))}
               </div>
               <span className="text-sm text-ink-300">20+ erfolgreiche Events</span>

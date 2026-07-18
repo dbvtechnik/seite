@@ -1,16 +1,17 @@
-import { Volume2, Instagram, Facebook, Mail } from 'lucide-react';
+import { Instagram, Facebook, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-ink-700 py-12">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          <div className="flex items-center gap-2.5">
-            <Volume2 className="h-6 w-6 text-accent-400" strokeWidth={2.5} />
-            <span className="font-display text-lg font-bold">
-              DBV<span className="text-accent-400">.</span>
-            </span>
-          </div>
+          <a href="#top" className="flex items-center gap-3 group">
+            <img
+              src="/image.png"
+              alt="DBV Veranstaltungstechnik Logo"
+              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
+          </a>
 
           <div className="flex items-center gap-6">
             <a href="#" className="text-ink-300 hover:text-accent-400 transition-colors" aria-label="Instagram">
