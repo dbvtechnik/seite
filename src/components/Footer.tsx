@@ -9,7 +9,7 @@ export default function Footer() {
             <img
               src="/image.png"
               alt="DBV Veranstaltungstechnik Logo"
-              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-20 w-auto transition-transform duration-300 group-hover:scale-105 [mix-blend-mode:screen]"
             />
           </a>
 
